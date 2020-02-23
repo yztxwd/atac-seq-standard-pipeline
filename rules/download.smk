@@ -1,7 +1,7 @@
 rule download:
-    input:
+    params:
         command=lambda wildcards: downloads.loc[wildcards.data, 'command']
     output:
-        "data/{data, .+fq.gz}"
+        "data/{data, .+.fq.gz}"
     shell:
-        "{input.command} {output}"
+        "{params.command}"

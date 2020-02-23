@@ -1,5 +1,5 @@
 fastq	command
-A.1.fq.gz	"curl -L URL"
+A.1.fq.gz	"curl-LURL"
 A.2.fq.gz	"curl -L URL"
 B.1.fq.gz	"curl -L URL"
 B.2.fq.gz	"curl -L URL"
