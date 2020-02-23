@@ -39,9 +39,7 @@ singularity: "docker://continuumio/miniconda3"
 report: "report/workflow.rst"
 
 #### load rules ####
-if config["downloads"]["skip"]:
-    continue
-else:
+if not config["downloads"]["skip"]:
     include: "rules/download.smk"
 include: "rules/global.smk"
 include: "rules/multiqc.smk"

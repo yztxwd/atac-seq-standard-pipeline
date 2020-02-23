@@ -7,7 +7,7 @@ samples: samples.tsv
 units: units.tsv
 
 downloads:
-  skip: true
+  skip: false
   tsv: downloads.tsv
 
 threads: 32
