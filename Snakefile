@@ -18,7 +18,7 @@ units.index = units.index.set_levels([i.astype(str) for i in units.index.levels]
 
 #### target rules ####
 # target output names
-conditions = list(samples.loc[~samples.index.isin(['control']), 'condition']).unique()
+conditions = list(samples.loc[~samples.index.isin(['control']), 'condition'].unique())
 
 rule all:
     input:

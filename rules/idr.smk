@@ -1,6 +1,6 @@
 rule idr:
     input:
-        samples=expand("output/genrich/{samples}.genrich.narrowPeak", samples=list(samples.loc[wildcards.condition, 'sample']))
+        samples=lambda wildcards: expand("output/genrich/{samples}.genrich.narrowPeak", samples=list(samples.loc[wildcards.condition, 'sample']))
     output:
         "output/idr/{condition}.idr.peaks"
     params:
