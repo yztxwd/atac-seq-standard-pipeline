@@ -6,6 +6,10 @@ samples: samples.tsv
 # or reverse.
 units: units.tsv
 
+downloads:
+  skip: true
+  tsv: downloads.tsv
+
 threads: 32
 
 multiqc:
@@ -31,6 +35,7 @@ samtools_view:
 
 filter:
   # parameters
+  pe: "-m pair -f 0 -s 0 -t 20"
   se: "-m single -f 0 -s 0 -t 20"
 
 

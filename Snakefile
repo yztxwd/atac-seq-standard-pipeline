@@ -16,6 +16,9 @@ units = pd.read_table(config["units"], dtype=str).set_index(["sample", "unit"], 
 units.index = units.index.set_levels([i.astype(str) for i in units.index.levels])
 #validate(units, schema="schemas/units.schema.yaml")
 
+downloads = pd.read_table(config["downloads"]["tsv"], dtype=str).set_index("fastq", drop=False)
+#validate
+
 #### target rules ####
 # target output names
 conditions = list(samples.loc[~samples.index.isin(['control']), 'condition'].unique())
@@ -36,6 +39,10 @@ singularity: "docker://continuumio/miniconda3"
 report: "report/workflow.rst"
 
 #### load rules ####
+if config["downloads"]["skip"]:
+    continue
+else:
+    include: "rules/download.smk"
 include: "rules/global.smk"
 include: "rules/multiqc.smk"
 include: "rules/trim.smk"
