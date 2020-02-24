@@ -9,14 +9,14 @@ min_version("5.1.2")
 configfile: "config.yaml"
 #validate(config, schema="schemas/config.schema.yaml")
 
-samples = pd.read_table(config["samples"]).set_index("condition", drop=False)
+samples = pd.read_table(config["samples"], dtype=str, comment="#").set_index("condition", drop=False)
 #validate(samples, schema="schemas/samples.schema.yaml")
 
-units = pd.read_table(config["units"], dtype=str).set_index(["sample", "unit"], drop=False)
+units = pd.read_table(config["units"], dtype=str, comment="#").set_index(["sample", "unit"], drop=False)
 units.index = units.index.set_levels([i.astype(str) for i in units.index.levels])
 #validate(units, schema="schemas/units.schema.yaml")
 
-downloads = pd.read_table(config["downloads"]["tsv"], dtype=str).set_index("fastq", drop=False)
+downloads = pd.read_table(config["downloads"]["tsv"], dtype=str, comment="#").set_index("accession", drop=False)
 #validate
 
 #### target rules ####

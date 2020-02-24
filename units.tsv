@@ -1,4 +1,7 @@
+# fastq files for each units(technical replicates)
+# Note: the suffix of fastq files must be _[12].fastq.gz! If you use
+# download.smk, please make sure the fastq file names are {accession}_[12].fastq.gz
 sample	unit	fq1	fq2
-A	lane1	A.1.fq.gz	A.2.fq.gz
-C	tech1	A.1.fq.gz	A.2.fq.gz
-B	tech1	B.1.fq.gz	B.2.fq.gz
+A	lane1	A_1.fastq.gz	A_2.fastq.gz
+C	tech1	A_1.fastq.gz	A_2.fastq.gz
+B	tech1	B_1.fastq.gz	B_2.fastq.gz

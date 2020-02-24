@@ -1,3 +1,5 @@
+# description of samples
+# Note: Only one control permitted
 sample	condition	replicate
 A	treatment	rep1
 C	treatment	rep2
