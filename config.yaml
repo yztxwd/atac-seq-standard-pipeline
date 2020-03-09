@@ -38,4 +38,9 @@ filter:
   pe: "-m pair -f 0 -s 0 -t 20"
   se: "-m single -f 0 -s 0 -t 20"
 
+dump:
+    # parameters
+    collect: true
+    collectDatabase: "/data1/yztxwd/Data/cache_resize.hdf5"
+
 

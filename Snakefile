@@ -21,11 +21,12 @@ downloads = pd.read_table(config["downloads"]["tsv"], dtype=str, comment="#").se
 
 #### target rules ####
 # target output names
-conditions = list(samples.loc[~samples.index.isin(['control']), 'condition'].unique())
+conditions = list(samples['condition'].unique())
 
 rule all:
     input:
         "output/qc/multiqc/multiqc.html",
+        "output/coverage.h5",
         expand("output/qc/size/{samples}.size.freq", samples=(units['sample']).unique()),
         expand("output/idr/{conditions}.idr.peaks", conditions=conditions)
 
@@ -50,3 +51,4 @@ include: "rules/merge.smk"
 include: "rules/size.smk"
 include: "rules/genrich.smk"
 include: "rules/idr.smk"
+include: "rules/dumpHDF5.smk"

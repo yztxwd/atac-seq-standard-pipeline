@@ -2,9 +2,9 @@ rule download:
     params:
         ftp=lambda wildcards: downloads.loc[wildcards.accession, 'ftp']
     output:
-        sra="data/{accession}.sra"
-        r1="data/{accession}_1.fastq.gz"
-        r2="data/{accession}_2.fastq.gz"
+        sra="data/{accession}.sra",
+        r1="data/{accession}_1.fastq.gz",
+        r2="data/{accession}_2.fastq.gz",
     conda:
         "../envs/sra-tools.yaml"
     shell:
