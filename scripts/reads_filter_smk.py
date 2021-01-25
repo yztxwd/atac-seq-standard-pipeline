@@ -71,10 +71,15 @@ if mode == 'pair':
 		elif count % 2 == 1 :
 			r2 = read
 			count += 1
+
+			# check if read.name is the same, otherwise exit
+			if (r1.query_name != r2.query_name):
+				raise Exception("Two consecutive reads don't have the same query name! Make sure bam file has been sorted by name!")
+
 			if(r1.mapping_quality >= mapq_threshold and r2.mapping_quality >= mapq_threshold) :
 				r1_coor = r1.reference_start + 1
 				r2_coor = r2.reference_start + 1
-				if (r1.reference_name != r2.reference_name) or (abs(r2_coor - r1_coor) >= 1000) or (abs(r2_coor - r1_coor) == 0):
+				if (r1.reference_name != r2.reference_name):
 					continue
 				else:
 					left = r1_coor if r1_coor < r2_coor else r2_coor
