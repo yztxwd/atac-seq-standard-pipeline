@@ -20,7 +20,7 @@ trimmomatic:
   skip: false
   # the trimming parameter, see manual: http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/TrimmomaticManual_V0.32.pdf
   trimmer: "LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:15"
-  adapter: "ILLUMINACLIP:path/to/adapter.fq:2:30:10"
+  adapter: "ILLUMINACLIP:data/TruSeq3-PE.fa:2:30:10"
 
 bowtie2:
   # the bowtie2 index
@@ -35,8 +35,8 @@ samtools_view:
 
 filter:
   # parameters
-  pe: "-m pair -f 0 -s 0 -t 20"
-  se: "-m single -f 0 -s 0 -t 20"
+  pe: "-m pair -f 0 -t 20"
+  se: "-m single -f 0 -t 20"
 
 dump:
     # parameters
