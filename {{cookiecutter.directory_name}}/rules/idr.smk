@@ -1,8 +1,8 @@
 rule idr:
     input:
-        samples=lambda wildcards: expand("output/genrich/{samples}.genrich.narrowPeak", samples=list(samples.loc[wildcards.condition, 'sample']))
+        samples=lambda wildcards: expand("output/genrich/{sample}-{rep}.genrich.narrowPeak", **wildcards, rep = ["rep1", "rep2"])
     output:
-        "output/idr/{condition}.idr.peaks"
+        "output/idr/{sample}.idr.peaks"
     params:
         extra=""
     conda:

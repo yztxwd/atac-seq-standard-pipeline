@@ -1,10 +1,10 @@
 rule genrich:
     input:
-        treatment="output/mapped/{sample}.merged.bam"
+        treatment="output/mapped/{sample}-{rep}.merge.sort.bam",
     output:
         "output/genrich/{sample}.genrich.narrowPeak"
     params:
-        extra=" -j -r "
+        extra=config["genrich"]
     conda:
         "../envs/genrich.yaml"
     shell:
