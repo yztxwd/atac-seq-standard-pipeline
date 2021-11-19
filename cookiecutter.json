@@ -1,5 +1,5 @@
 {
-    "directory_name": "chip-seq-standard-pipeline",
+    "directory_name": "atac-seq-standard-pipeline",
     "aligner": ["bowtie2", "bwa"],
     "skiptrim": [false, true],
     "trimmer": ["trimmomatic", "fastp"],
