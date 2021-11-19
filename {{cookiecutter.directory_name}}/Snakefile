@@ -9,7 +9,7 @@ min_version("5.1.2")
 configfile: "config.yaml"
 #validate(config, schema="schemas/config.schema.yaml")
 
-samples = pd.read_table(config["samples"], dtype=str, comment="#").set_index("condition", drop=False)
+samples = pd.read_table(config["samples"]).set_index(["sample", "rep", "unit"], drop=False)
 #validate(samples, schema="schemas/samples.schema.yaml")
 
 #### target rules ####
