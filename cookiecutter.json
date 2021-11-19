@@ -15,8 +15,8 @@
     "bwa_mem": "",
     "skipfilter": [true, false],
     "genome_fai": "path/to/genome/fai",
-    "mode": ["tf", "histone"],
-    "macs2_gsize": "mm",
+    "genrich": "-j -r",
+    "idr": "",
     "_copy_without_render": [
         "*.smk",
         "*Snakefile"
