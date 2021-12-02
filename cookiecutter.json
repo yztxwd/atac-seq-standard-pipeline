@@ -15,7 +15,7 @@
     "bwa_mem": "",
     "skipfilter": [true, false],
     "genome_fai": "path/to/genome/fai",
-    "genrich": "-j -r",
+    "genrich": "-j",
     "idr": "",
     "_copy_without_render": [
         "*.smk",
