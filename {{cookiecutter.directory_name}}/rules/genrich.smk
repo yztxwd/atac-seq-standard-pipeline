@@ -1,6 +1,6 @@
 rule genrich:
     input:
-        treatment="output/mapped/{sample}-{rep}.merge.sort.bam",
+        treatment="output/mapped/{sample}-{rep}.merge.sortName.bam",
     output:
         "output/genrich/{sample}-{rep}.genrich.narrowPeak"
     params:
