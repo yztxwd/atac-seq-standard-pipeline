@@ -31,6 +31,7 @@
     "genome_fai": "path/to/genome/fai",
     "genrich": "-j",
     "idr": "",
+    "bamCoverage": "--extendReads",
     "blacklist": "path/to/blacklist",
     "transcriptome": "GTF or BED gene annotation file",
     "_copy_without_render": [
