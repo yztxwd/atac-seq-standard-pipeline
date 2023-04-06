@@ -11,10 +11,11 @@ def main():
     
     # include rules into Snakefile
     with open('Snakefile', 'a') as f:
+        f.write('\n')
         for rule in os.listdir(f'{CHILD_DIR}/rules'):
-            f.write(f'include: {CHILD_DIR}/rules/{rule}\n')
+            f.write(f'include: "{CHILD_DIR}/rules/{rule}"\n')
         for rule in os.listdir('./rules'):
-            f.write(f'include: ./rules/{rule}\n')
+            f.write(f'include: "./rules/{rule}"\n')
     
     # init the git
     subprocess.check_call(['git', 'init'], stdout=subprocess.DEVNULL)
