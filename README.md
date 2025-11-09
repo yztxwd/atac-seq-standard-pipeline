@@ -1,4 +1,4 @@
-# Snakemake pipeline for ChIP-seq data
+# Snakemake pipeline for ATAC-seq data
 
 
 @author Jianyu Yang, Southern Medical University
